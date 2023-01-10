@@ -34,3 +34,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Generated via next-pwa
+**/public/workbox**
+**/public/sw**.*
+
+# Unity Builds
+**/public/build/**
+
+# environment secrets
+.env
