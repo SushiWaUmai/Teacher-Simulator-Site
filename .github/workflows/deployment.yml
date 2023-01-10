@@ -27,12 +27,15 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-node-
             ${{ runner.OS }}-
+
       - name: Build
         run: |
           pnpm i
           pnpm run build
           pnpm run export
           touch ./out/.nojekyll
+        env:
+          NEXT_PUBLIC_UNITY_URL: ${{ secrets.UNITY_URL }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.3
